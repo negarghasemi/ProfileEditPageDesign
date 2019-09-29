@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PageDesign.Views.ProfileView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:res="clr-namespace:PageDesign.Resources"
+    xmlns:resources="clr-namespace:PageDesign.Resources;assembly=PageDesign">
+
+    <ContentPage.Resources>
+        <Style x:Key="GrayGridStyle" TargetType="Grid">
+            <Setter Property="BackgroundColor" Value="#F2F2F2" />
+            <Setter Property="Padding" Value="10" />
+        </Style>
+        <Style x:Key="TitleStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+        <Style x:Key="TitlePropertyStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="#6E6E6E" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+        <Style x:Key="TitlePropertyLightGrayStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="#A4A4A4" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+        <Style x:Key="TitlePropertyValNormalStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+        <Style x:Key="TitlePropertyValoOranegStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="#FACC2E" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+        <Style x:Key="BoxViewStyle" TargetType="BoxView">
+            <Setter Property="WidthRequest" Value="1" />
+            <Setter Property="Color" Value="#BDBDBD" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+        <Style x:Key="FrameStyle" TargetType="Frame">
+            <Setter Property="CornerRadius" Value="15" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="HasShadow" Value="True" />
+        </Style>
+        <Style x:Key="GrayFrameStyle" TargetType="Frame">
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="BackgroundColor" Value="#6E6E6E" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+        <Style x:Key="GrayButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#6E6E6E" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="WidthRequest" Value="140" />
+        </Style>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Grid Style="{StaticResource GrayGridStyle}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Column="2"
+                FontSize="20"
+                HorizontalOptions="End"
+                Text="‌ذخیره"
+                TextColor="Green"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Column="1"
+                Style="{StaticResource TitleStyle}"
+                Text="ویرایش پروفایل" />
+            <Image
+                Grid.Column="0"
+                HeightRequest="16"
+                HorizontalOptions="Start"
+                Source="{res:ImageResource PageDesign.Resources.Images.navigation_icons_back_icon_dark.png}"
+                VerticalOptions="Center"
+                WidthRequest="16" />
+        </Grid>
+
+        <StackLayout Padding="10">
+            <Image
+                Margin="20"
+                HeightRequest="100"
+                HorizontalOptions="Center"
+                Source="{res:ImageResource PageDesign.Resources.Images.profile_pic.png}"
+                VerticalOptions="Center"
+                WidthRequest="100" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="4">
+                    <Label Style="{StaticResource TitlePropertyStyle}" Text="سطح اعتبار" />
+                    <Label Style="{StaticResource TitlePropertyValNormalStyle}" Text="A-100" />
+                </StackLayout>
+                <BoxView Grid.Column="3" Style="{StaticResource BoxViewStyle}" />
+                <StackLayout Grid.Column="2">
+                    <Label Style="{StaticResource TitlePropertyStyle}" Text="کد ملی" />
+                    <Label Style="{StaticResource TitlePropertyValNormalStyle}" Text="0017200520" />
+                </StackLayout>
+                <BoxView Grid.Column="1" Style="{StaticResource BoxViewStyle}" />
+                <StackLayout Grid.Column="0">
+                    <Label Style="{StaticResource TitlePropertyStyle}" Text="وضعیت" />
+                    <Label Style="{StaticResource TitlePropertyValoOranegStyle}" Text="احراز نشده" />
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+
+        <Grid RowSpacing="10" Style="{StaticResource GrayGridStyle}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label
+                Grid.Row="0"
+                HorizontalOptions="End"
+                Style="{StaticResource TitlePropertyLightGrayStyle}"
+                Text="نام و نام خانوادگی" />
+            <Frame
+                Grid.Row="1"
+                HeightRequest="30"
+                Style="{StaticResource FrameStyle}">
+                <Entry />
+            </Frame>
+            <Frame Grid.Row="2" Style="{StaticResource FrameStyle}">
+                <StackLayout>
+                    <StackLayout Padding="20" HorizontalOptions="Center">
+                        <Image
+                            Margin="5"
+                            HeightRequest="50"
+                            Source="{res:ImageResource PageDesign.Resources.Images.lock_icon.png}"
+                            WidthRequest="50" />
+                        <Label
+                            Margin="5"
+                            FontSize="20"
+                            Style="{StaticResource TitlePropertyStyle}"
+                            Text="تکمیل پروفایل" />
+                        <Label HorizontalTextAlignment="Center"
+                            FontSize="20"
+                            Style="{StaticResource TitlePropertyLightGrayStyle}"
+                            Text="لطفا جهت تکمیل پروفایل خود و دسترسی به امکانات بیشتر احراز هویت کنید." />
+
+                    </StackLayout>
+
+                    <Frame Margin="10" Style="{StaticResource GrayFrameStyle}">
+                        <Button Style="{StaticResource GrayButtonStyle}" Text="احراز هویت" />
+                    </Frame>
+
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
